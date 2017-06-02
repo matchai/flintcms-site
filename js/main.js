@@ -1,5 +1,1 @@
-var obj = {
-  hello: 'worlds'
-};
-
-console.log(obj);
+var obj={hello:"worlds"};console.log(obj);
