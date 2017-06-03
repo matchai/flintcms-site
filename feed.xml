@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>FlintCMS</title>
-    <description>FlintCMS is a Node.js Content Management System build to focus on the Content, with a clear API for templating.
+    <description>FlintCMS is a super-performant, content-focused Node.js Content Management System with a clear templating API and tons of other features.
 </description>
     <link>https://flintcms.co/</link>
     <atom:link href="https://flintcms.co/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 03 Jun 2017 16:28:08 -0400</pubDate>
-    <lastBuildDate>Sat, 03 Jun 2017 16:28:08 -0400</lastBuildDate>
+    <pubDate>Sat, 03 Jun 2017 18:19:47 -0400</pubDate>
+    <lastBuildDate>Sat, 03 Jun 2017 18:19:47 -0400</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
     
       <item>
