@@ -10,6 +10,7 @@
   <meta name="description" content="FlintCMS is a Node.js Content Management System build to focus on the Content, with a clear API for templating.
 ">
 
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="https://flintcms.co/">
   <link rel="alternate" type="application/rss+xml" title="FlintCMS" href="https://flintcms.co/feed.xml">
@@ -18,7 +19,7 @@
 
   <body>
 
-    <div class="home">
+    <main class="home" role="main">
   <header class="home__header">
     <svg xmlns="http://www.w3.org/2000/svg" class="flint-logo" width="200" height="50" viewBox="0 0 198.77 48.61">
   <title>FlintCMS</title>
@@ -35,11 +36,103 @@
     <path d="M188.4,47.67c-7.61,0-10.73-4.53-11.51-7.46l3.69-1.3c.89,3.36,3.87,5.47,7.88,5.47,4.24,0,6.17-2.6,6.17-5s-1.75-4.21-4.69-4.87l-5.26-1.15c-4.37-.93-7-3.83-7-7.76,0-4.78,4.6-8.83,10-8.83,7.44,0,9.87,4.51,10.62,6.79l-3.56,1.33c-.79-2.49-3-4.82-7.06-4.82-3.78,0-6,2.55-6,5s1.55,4,4.25,4.61l5,1.09c5,1.1,7.8,4,7.8,8.27S195.14,47.67,188.4,47.67Z" />
   </g>
 </svg>
-
-    [WIP]
+    <h2 class="home__header__title">Content-focused CMS built on Node.js</h2>
+    <a href="#" class="btn btn--white">Get Started</a>
+    <p class="home__header__npm">npm install flintcms</p>
+    <div class="home__header__btns">
+      <a href="#" class="btn btn--sub">Read Docs</a>
+      <a href="https://github.com/JasonEtco/flintcms" target="_blank" class="btn btn--sub">Contribute</a>
+    </div>
   </header>
-</div>
 
+  <section class="section section--one">
+    <div class="card">
+      <h3>Built on a modern stack</h3>
+      <p>Most Content Management Systems use old technology that isn’t as fast or as easy to work with as modern JavaScript. Flint uses Node.js, MongoDB and ReactJS to make the most out of the speedy state of JS.</p>
+    </div>
+    <div class="card">
+      <h3>Async/Await for it...</h3>
+      <p>Using Node.js version 8.x, Flint is able to leverage the async/await keywords to make asynchronous functionality exceptionally clear, declarative and easy to work with.</p>
+    </div>
+  </section>
+
+  <section class="section section--two">
+    <div class="section--two__text">
+      <h3 class="section__title">The only theme is yours.</h3>
+      <p>FlintCMS doesn’t need a theme system because no website is the same. We give you the capabilities to design and code your own front-end, then hook it up to the database of content using template variables.</p>
+    </div>
+    <img src="assets/img.png" alt="Screenshot of the code for a template">
+  </section>
+
+  <section class="section--three">
+    <div class="section--three__text">
+      <h3 class="section__title">Free and Open Source</h3>
+      <p>Nowadays, no software is written entirely by one person. Flint uses open source software and is open source itself, and we’re always looking for people to <a href="https://github.com/JasonEtco/flintcms">help make it better</a>.</p>
+    </div>
+    <div class="section--three__logos">
+      <img src="assets/os-logos/node.png" alt="Node.js" title="Node.js">
+      <img src="assets/os-logos/mongo.png" alt="MongoDB" title="MongoDB">
+      <img src="assets/os-logos/react.png" alt="ReactJS" title="ReactJS">
+      <img src="assets/os-logos/graphql.png" alt="GraphQL" title="GraphQL">
+      <img src="assets/os-logos/sass.png" alt="SASS" title="SASS">
+      <img src="assets/os-logos/nunjucks.png" alt="Nunjucks" title="Nunjucks">
+    </div>
+  </section>
+
+  <section class="section section--four">
+    <div class="section--four__controls">
+      <button class="js-home-btn is-active"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path x="2" d="M9.25 7H9V4c0-1.654-1.346-3-3-3H4C2.346 1 1 2.346 1 4v3H.75a.753.753 0 0 0-.75.75v7.5c0 .412.338.75.75.75h8.5c.412 0 .75-.338.75-.75v-7.5A.753.753 0 0 0 9.25 7zM3 4c0-.551.449-1 1-1h2c.551 0 1 .449 1 1v3H3V4z" transform="translate(3,0)"/></svg></button>
+      <button class="js-home-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="M8 1a8 8 0 0 1 3.875 15h-7.75A8 8 0 0 1 8 1zm4.53 12.53A6.364 6.364 0 0 0 14.406 9H13V8h1.329a6.346 6.346 0 0 0-.665-2H12V5h1.004a6.372 6.372 0 0 0-3.005-2.089V4h-1V2.671a6.506 6.506 0 0 0-2 0V4h-1V2.911A6.384 6.384 0 0 0 2.994 5h1.004v1H2.334a6.346 6.346 0 0 0-.665 2h1.329v1H1.592c0 1.711.666 3.32 1.876 4.53.167.167.343.324.524.47h3.006l.571-8h.857l.571 8h3.006c.182-.146.357-.303.524-.47z"/></svg></button>
+      <button class="js-home-btn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16"><path d="M13 11.5l1.5 1.5 5-5-5-5L13 4.5 16.5 8zM7 4.5L5.5 3l-5 5 5 5L7 11.5 3.5 8zM10.958 2.352l1.085.296-3 11-1.085-.296 3-11z"/></svg></button>
+      <button class="js-home-btn"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"><path d="M6 0h8v2h-2v14h-2V2H8v14H6V8a4 4 0 0 1 0-8z"/></svg></button>
+    </div>
+
+    <div class="section--four__content">
+      <div class="js-home-block is-active">
+        <div class="section--four__block__text">
+          <h3>Granular Permissions</h3>
+          <p>Right out of the box, Flint allows for multiple usergroups with different permissions for each one. This gives you more control over the capabilities of the different kinds of users managing content on your website.</p>
+        </div>
+        <img src="assets/usergroup.png" alt="Screenshot of the various available permissions for each usergroup">
+      </div>
+
+      <div class="js-home-block">
+        <div class="section--four__block__text">
+          <h3>So Speedy</h3>
+          <p>Node.js and ReactJS make a great pair, especially when it comes to performance. The templating engine is blazing fast, and the admin dashboard is even faster. Using GraphQL, queries are lean and performant making every request a great experience for your users.</p>
+        </div>
+        <img src="assets/usergroup.png" alt="Screenshot of the various available permissions for each usergroup">
+      </div>
+
+      <div class="js-home-block">
+        <div class="section--four__block__text">
+          <h3>Full Front-End Control</h3>
+          <p>There are no restrictions; you have the ability to design and code the front-end of your website however you see fit. Using <a href="https://mozilla.github.io/nunjucks/" target="_blank">Nunjucks</a> templating variables, every template has access to whatever content it needs.</p>
+        </div>
+        <img src="assets/usergroup.png" alt="Screenshot of the various available permissions for each usergroup">
+      </div>
+
+      <div class="js-home-block">
+        <div class="section--four__block__text">
+          <h3>Rich Text Editor</h3>
+          <p>The custom-built rich text editor, built on top of DraftJS, makes writing a breeze. The styles it outputs can still be styled using your own CSS, but it gives a great place for content writers to start thinking about their formatting.</p>
+        </div>
+        <img src="assets/usergroup.png" alt="Screenshot of the various available permissions for each usergroup">
+      </div>
+    </div>
+  </section>
+</main>
+
+
+    <footer class="footer">
+  <p>Designed & built by <a href="">@jasonetco</a> under the MIT License.</p>
+  <div class="footer__links">
+    <a href="#">Get Started</a>
+    <a href="#">Documentation</a>
+    <a href="https://github.com/JasonEtco/flintcms">GitHub</a>
+    <a href="#">Demo Project</a>
+  </div>
+</footer>
 
 
     <script>
