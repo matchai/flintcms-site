@@ -6,8 +6,8 @@
 </description>
     <link>https://flintcms.co/</link>
     <atom:link href="https://flintcms.co/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 04 Jun 2017 00:17:45 -0400</pubDate>
-    <lastBuildDate>Sun, 04 Jun 2017 00:17:45 -0400</lastBuildDate>
+    <pubDate>Sun, 04 Jun 2017 16:27:49 -0400</pubDate>
+    <lastBuildDate>Sun, 04 Jun 2017 16:27:49 -0400</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
     
       <item>
@@ -55,6 +55,80 @@
         <pubDate>Sat, 03 Jun 2017 18:16:01 -0400</pubDate>
         <link>https://flintcms.co/docs/users/</link>
         <guid isPermaLink="true">https://flintcms.co/docs/users/</guid>
+        
+        
+        <category>docs</category>
+        
+      </item>
+    
+      <item>
+        <title>Sections</title>
+        <description>&lt;p&gt;Sections are how Flint categorizes different entries. A section defines what kind of information entries in that section can expect; when creating a section, you decide on which fields you want to show. Each section can use a different template file.&lt;/p&gt;
+
+&lt;p&gt;Sections are the best way to group entries of a similar type. For example, in a food blog you might have a section for general recipes, then a section for your own personal restaurant critiques. The important thing to note is that entries in each of those two sections will have vastly different content, and so they should be designed and handled differently. Of course, this is totally up to you; the point of sections is to give you choices but not lock you into any specific functionality.&lt;/p&gt;
+
+&lt;h2 id=&quot;creating-a-new-section&quot;&gt;Creating a new Section&lt;/h2&gt;
+
+&lt;p&gt;Creating a new Section is real easy; just head to your site’s Settings from the side menu, click &lt;em&gt;Sections&lt;/em&gt; and then the &lt;em&gt;New Section&lt;/em&gt; button in the top right. As you write the title of the section, you’ll see that the handle is created based on the title. That handle is how you’ll find entries in that section within the template. You can learn more about how sections are handled in templates &lt;a href=&quot;/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;plans-for-improvement&quot;&gt;Plans for Improvement&lt;/h2&gt;
+
+&lt;p&gt;Create different types of sections, to be able to have different organizational features for the different types of content. For example, a general section to have different entries of the same level, and then a hierarchy-based section that can have nested entries (could be useful for documentation, wikis, etc.). If you have any inclination to talk about it, please &lt;a href=&quot;https://github.com/JasonEtco/flintcms/issues&quot;&gt;do so here!&lt;/a&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sat, 03 Jun 2017 18:16:01 -0400</pubDate>
+        <link>https://flintcms.co/docs/sections/</link>
+        <guid isPermaLink="true">https://flintcms.co/docs/sections/</guid>
+        
+        
+        <category>docs</category>
+        
+      </item>
+    
+      <item>
+        <title>Fields</title>
+        <description>&lt;p&gt;Fields are the ways that your writers or content editors can fill in the spaces given to them in a section. For example, you might have a field that is a simple text input called &lt;em&gt;Subtitle&lt;/em&gt;, then just below it you could have a Rich Text field called &lt;em&gt;Main Content&lt;/em&gt;. This is a common pattern to represent two individual bits of content that, due to their individual template handles, can be styled and layed out completely separately.&lt;/p&gt;
+
+&lt;p&gt;Fields can be reused throughout multiple sections and each come with customizable options to ensure that your content is consistent.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 03 Jun 2017 18:16:01 -0400</pubDate>
+        <link>https://flintcms.co/docs/fields/</link>
+        <guid isPermaLink="true">https://flintcms.co/docs/fields/</guid>
+        
+        
+        <category>docs</category>
+        
+      </item>
+    
+      <item>
+        <title>Entries</title>
+        <description>&lt;p&gt;Entries are really the meat and potatoes of Flint. You can think of them as posts or articles, but they are effectively the individual documents that your website has. Entries are grouped within Sections to maintain the same styling and content expectations.&lt;/p&gt;
+
+&lt;p&gt;Entries can have one of three statuses: &lt;code class=&quot;highlighter-rouge&quot;&gt;Live&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;Draft&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;Disabled&lt;/code&gt;. Live is fairly straightforward, but Draft and Disabled are separate to enable more specific user permissions.&lt;/p&gt;
+
+&lt;p&gt;Because entries are the main way that content is added to your site, there are specific permissions that deal with them. For example, there is a permission that enables/disables the ability to create or edit a live entry.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 03 Jun 2017 18:16:01 -0400</pubDate>
+        <link>https://flintcms.co/docs/entries/</link>
+        <guid isPermaLink="true">https://flintcms.co/docs/entries/</guid>
+        
+        
+        <category>docs</category>
+        
+      </item>
+    
+      <item>
+        <title>Assets</title>
+        <description>&lt;p&gt;Assets are, for now, images. These images are stored in the local file system on the server. When you upload a new asset, it is saved to the &lt;code class=&quot;highlighter-rouge&quot;&gt;/public/assets/&lt;/code&gt; folder of your server. There is a special static route to the public folder as a part of the Flint server, so when linking to an asset in a template you’ll want to do something like:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/public/assets/myimage.png&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Future plans to improve assets includes adding more available file types and categorization (like sub-folders). If you want to help improve FlintCMS in this way, please &lt;a href=&quot;https://github.com/JasonEtco/flintcms/issues&quot;&gt;talk about it here&lt;/a&gt;!&lt;/p&gt;
+</description>
+        <pubDate>Sat, 03 Jun 2017 18:16:01 -0400</pubDate>
+        <link>https://flintcms.co/docs/assets/</link>
+        <guid isPermaLink="true">https://flintcms.co/docs/assets/</guid>
         
         
         <category>docs</category>

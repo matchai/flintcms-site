@@ -6,13 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Documentation | FlintCMS</title>
-  <meta name="description" content="FlintCMS is a super-performant, content-focused Node.js Content Management System with a clear templating API and tons of other features.
-">
+  <title>Assets | FlintCMS</title>
+  <meta name="description" content="Assets are, for now, images. These images are stored in the local file system on the server. When you upload a new asset, it is saved to the /public/assets/ ...">
 
   <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://flintcms.co/docs/">
+  <link rel="canonical" href="https://flintcms.co/docs/assets/">
   <link rel="alternate" type="application/rss+xml" title="FlintCMS" href="https://flintcms.co/feed.xml">
 
   <link rel="manifest" href="/manifest.json">
@@ -24,13 +23,12 @@
   <meta name="msapplication-config" content="">
   <meta name="theme-color" content="#fe6300">
 
-  <meta property="og:title" content="Documentation | FlintCMS" />
-  <meta property="og:description" content="FlintCMS is a super-performant, content-focused Node.js Content Management System with a clear templating API and tons of other features.
-">
+  <meta property="og:title" content="Assets | FlintCMS" />
+  <meta property="og:description" content="Assets are, for now, images. These images are stored in the local file system on the server. When you upload a new asset, it is saved to the /public/assets/ ...">
   <meta property="og:type" content="article" />
   <meta property="og:article:modified_time" content="2017-06-04 16:27:49 -0400" />
-  
-  <meta property="og:url" content="https://flintcms.co/docs/" />
+  <meta property="og:article:section" content="Core Concepts" />
+  <meta property="og:url" content="https://flintcms.co/docs/assets/" />
   <meta property="og:image" content="https://flintcms.co/assets/flintcms.png" />
   <meta property="og:image:url" content="https://flintcms.co/assets/flintcms.png" />
   <meta property="og:image:width" content="1200" />
@@ -39,11 +37,10 @@
   <meta property="og:image:alt" content="FlintCMS, a content-focused management system." />
 
   <meta property="twitter:card" content="summary" />
-  <meta property="twitter:title" content="Documentation | FlintCMS" />
+  <meta property="twitter:title" content="Assets | FlintCMS" />
   <meta property="twitter:image" content="https://flintcms.co/assets/flintcms.png" />
   <meta property="twitter:creator" content="@jasonetco" />
-  <meta property="twitter:description" content="FlintCMS is a super-performant, content-focused Node.js Content Management System with a clear templating API and tons of other features.
-">
+  <meta property="twitter:description" content="Assets are, for now, images. These images are stored in the local file system on the server. When you upload a new asset, it is saved to the /public/assets/ ...">
   <meta property="twitter:image:alt" content="FlintCMS, a content-focused management system." />
 </head>
 
@@ -142,7 +139,7 @@
           
         
           
-            <li class="docs-nav__section__list-item"><a href="/docs/assets/" class="docs-nav__section__link">Assets</a></li>
+            <li class="docs-nav__section__list-item"><a href="/docs/assets/" class="docs-nav__section__link is-active">Assets</a></li>
           
         
       </ul>
@@ -153,13 +150,18 @@
   <article class="docs-post" itemscope itemtype="http://schema.org/BlogPosting">
 
     <header class="docs-post__header">
-      <h1 class="docs-post__title" itemprop="name headline">Documentation</h1>
+      <h1 class="docs-post__title" itemprop="name headline">Assets</h1>
     </header>
 
     <div class="docs-post__content" itemprop="articleBody">
-      <script>
-  window.location.assign(window.location.href + 'introduction');
-</script>
+      <p>Assets are, for now, images. These images are stored in the local file system on the server. When you upload a new asset, it is saved to the <code class="highlighter-rouge">/public/assets/</code> folder of your server. There is a special static route to the public folder as a part of the Flint server, so when linking to an asset in a template you’ll want to do something like:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"/public/assets/myimage.png"</span> <span class="nt">/&gt;</span>
+</code></pre>
+</div>
+
+<p>Future plans to improve assets includes adding more available file types and categorization (like sub-folders). If you want to help improve FlintCMS in this way, please <a href="https://github.com/JasonEtco/flintcms/issues">talk about it here</a>!</p>
+
     </div>
 
   </article>
