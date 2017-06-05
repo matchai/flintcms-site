@@ -6,8 +6,8 @@
 </description>
     <link>https://flintcms.co/</link>
     <atom:link href="https://flintcms.co/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 04 Jun 2017 21:04:49 -0400</pubDate>
-    <lastBuildDate>Sun, 04 Jun 2017 21:04:49 -0400</lastBuildDate>
+    <pubDate>Mon, 05 Jun 2017 03:17:05 -0400</pubDate>
+    <lastBuildDate>Mon, 05 Jun 2017 03:17:05 -0400</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
     
       <item>
@@ -31,7 +31,53 @@
     
       <item>
         <title>Installation</title>
-        <description>
+        <description>&lt;p&gt;Installing and getting up and running with Flint couldn’t be any easier. Assuming you have Node.js installed, you’ll want to run:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install flintcms
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;entry-point&quot;&gt;Entry Point&lt;/h2&gt;
+
+&lt;p&gt;Every JavaScript app needs an entry point. You’ll want to create a new JavaScript file, probably &lt;code class=&quot;highlighter-rouge&quot;&gt;index.js&lt;/code&gt;, at the root of your project and fill it with something like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Flint&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;flintcms&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Flint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;flintServer&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;new&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Flint&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;siteName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;My Amazing Flint Site!&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;flintServer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;startServer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;That’s the basics right there! When you’re ready, you can run the server by running &lt;code class=&quot;highlighter-rouge&quot;&gt;node index.js&lt;/code&gt; in your terminal.&lt;/p&gt;
+
+&lt;h2 id=&quot;env&quot;&gt;.env&lt;/h2&gt;
+
+&lt;p&gt;You will also need a separate &lt;code class=&quot;highlighter-rouge&quot;&gt;.env&lt;/code&gt; file to store sensitive environment variables, like database connection details. Here is what it would look like:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Secret settings
+SESSION_SECRET= ...
+
+# Debug settings
+DEBUG= ...
+
+# Mongo Credentials
+DB_HOST= ...
+DB_USER= ...
+DB_PASS= ...
+
+# Email Credentials
+MAIL_HOST= ...
+MAIL_USER= ...
+MAIL_PASS= ...
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;For a Mongo database, mLab is suggested but by no means mandatory. As for emails, Flint uses the &lt;a href=&quot;https://nodemailer.com/about/&quot;&gt;Nodemailer&lt;/a&gt; package which supports various SMTP services. Flint’s recommended one is Mailgun, and if you’re having trouble setting it up feel free to &lt;a href=&quot;hello@jasonet.co&quot;&gt;email me&lt;/a&gt; and I can give you Flint-specific Mailgun credentials.&lt;/p&gt;
+
+&lt;p&gt;If you’re having trouble setting up any of these, feel free to &lt;a href=&quot;https://github.com/JasonEtco/flintcms/issues&quot;&gt;open up an issue&lt;/a&gt; detailing your experience.&lt;/p&gt;
 </description>
         <pubDate>Sat, 03 Jun 2017 18:16:01 -0400</pubDate>
         <link>https://flintcms.co/docs/installation/</link>

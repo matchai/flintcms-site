@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>Installation | FlintCMS</title>
-  <meta name="description" content="">
+  <meta name="description" content="Installing and getting up and running with Flint couldn’t be any easier. Assuming you have Node.js installed, you’ll want to run:">
 
   <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
   <link rel="stylesheet" href="/css/main.css">
@@ -24,9 +24,9 @@
   <meta name="theme-color" content="#fe6300">
 
   <meta property="og:title" content="Installation | FlintCMS" />
-  <meta property="og:description" content="">
+  <meta property="og:description" content="Installing and getting up and running with Flint couldn’t be any easier. Assuming you have Node.js installed, you’ll want to run:">
   <meta property="og:type" content="article" />
-  <meta property="og:article:modified_time" content="2017-06-04 21:04:49 -0400" />
+  <meta property="og:article:modified_time" content="2017-06-05 03:17:05 -0400" />
   <meta property="og:article:section" content="Getting Started" />
   <meta property="og:url" content="https://flintcms.co/docs/installation/" />
   <meta property="og:image" content="https://flintcms.co/assets/flintcms.png" />
@@ -40,7 +40,7 @@
   <meta property="twitter:title" content="Installation | FlintCMS" />
   <meta property="twitter:image" content="https://flintcms.co/assets/flintcms.png" />
   <meta property="twitter:creator" content="@jasonetco" />
-  <meta property="twitter:description" content="">
+  <meta property="twitter:description" content="Installing and getting up and running with Flint couldn’t be any easier. Assuming you have Node.js installed, you’ll want to run:">
   <meta property="twitter:image:alt" content="FlintCMS, a content-focused management system." />
 </head>
 
@@ -154,7 +154,53 @@
     </header>
 
     <div class="docs-post__content" itemprop="articleBody">
-      
+      <p>Installing and getting up and running with Flint couldn’t be any easier. Assuming you have Node.js installed, you’ll want to run:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>npm install flintcms
+</code></pre>
+</div>
+
+<h2 id="entry-point">Entry Point</h2>
+
+<p>Every JavaScript app needs an entry point. You’ll want to create a new JavaScript file, probably <code class="highlighter-rouge">index.js</code>, at the root of your project and fill it with something like this:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">Flint</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'flintcms'</span><span class="p">).</span><span class="nx">Flint</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">flintServer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Flint</span><span class="p">({</span>
+  <span class="na">siteName</span><span class="p">:</span> <span class="s1">'My Amazing Flint Site!'</span><span class="p">,</span>
+<span class="p">});</span>
+
+<span class="nx">flintServer</span><span class="p">.</span><span class="nx">startServer</span><span class="p">();</span>
+</code></pre>
+</div>
+
+<p>That’s the basics right there! When you’re ready, you can run the server by running <code class="highlighter-rouge">node index.js</code> in your terminal.</p>
+
+<h2 id="env">.env</h2>
+
+<p>You will also need a separate <code class="highlighter-rouge">.env</code> file to store sensitive environment variables, like database connection details. Here is what it would look like:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code># Secret settings
+SESSION_SECRET= ...
+
+# Debug settings
+DEBUG= ...
+
+# Mongo Credentials
+DB_HOST= ...
+DB_USER= ...
+DB_PASS= ...
+
+# Email Credentials
+MAIL_HOST= ...
+MAIL_USER= ...
+MAIL_PASS= ...
+</code></pre>
+</div>
+
+<p>For a Mongo database, mLab is suggested but by no means mandatory. As for emails, Flint uses the <a href="https://nodemailer.com/about/">Nodemailer</a> package which supports various SMTP services. Flint’s recommended one is Mailgun, and if you’re having trouble setting it up feel free to <a href="hello@jasonet.co">email me</a> and I can give you Flint-specific Mailgun credentials.</p>
+
+<p>If you’re having trouble setting up any of these, feel free to <a href="https://github.com/JasonEtco/flintcms/issues">open up an issue</a> detailing your experience.</p>
 
     </div>
 
