@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Sections | FlintCMS</title>
-  <meta name="description" content="Sections are how Flint categorizes different entries. A section defines what kind of information entries in that section can expect; when creating a section,...">
+  <title>Site Configuration | FlintCMS</title>
+  <meta name="description" content="There are a number of customization options available to you when you created your instance of the Flint object. You can pass an object of these options as t...">
 
   <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono:400,700" rel="stylesheet">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://flintcms.co/docs/sections/">
+  <link rel="canonical" href="https://flintcms.co/docs/site-configuration/">
   <link rel="alternate" type="application/rss+xml" title="FlintCMS" href="https://flintcms.co/feed.xml">
 
   <link rel="manifest" href="/manifest.json">
@@ -23,12 +23,12 @@
   <meta name="msapplication-config" content="">
   <meta name="theme-color" content="#fe6300">
 
-  <meta property="og:title" content="Sections | FlintCMS" />
-  <meta property="og:description" content="Sections are how Flint categorizes different entries. A section defines what kind of information entries in that section can expect; when creating a section,...">
+  <meta property="og:title" content="Site Configuration | FlintCMS" />
+  <meta property="og:description" content="There are a number of customization options available to you when you created your instance of the Flint object. You can pass an object of these options as t...">
   <meta property="og:type" content="article" />
   <meta property="og:article:modified_time" content="2017-06-06 14:14:44 -0400" />
-  <meta property="og:article:section" content="Core Concepts" />
-  <meta property="og:url" content="https://flintcms.co/docs/sections/" />
+  <meta property="og:article:section" content="Getting Started" />
+  <meta property="og:url" content="https://flintcms.co/docs/site-configuration/" />
   <meta property="og:image" content="https://flintcms.co/assets/flintcms.png" />
   <meta property="og:image:url" content="https://flintcms.co/assets/flintcms.png" />
   <meta property="og:image:width" content="1200" />
@@ -37,10 +37,10 @@
   <meta property="og:image:alt" content="FlintCMS, a content-focused management system." />
 
   <meta property="twitter:card" content="summary" />
-  <meta property="twitter:title" content="Sections | FlintCMS" />
+  <meta property="twitter:title" content="Site Configuration | FlintCMS" />
   <meta property="twitter:image" content="https://flintcms.co/assets/flintcms.png" />
   <meta property="twitter:creator" content="@jasonetco" />
-  <meta property="twitter:description" content="Sections are how Flint categorizes different entries. A section defines what kind of information entries in that section can expect; when creating a section,...">
+  <meta property="twitter:description" content="There are a number of customization options available to you when you created your instance of the Flint object. You can pass an object of these options as t...">
   <meta property="twitter:image:alt" content="FlintCMS, a content-focused management system." />
 </head>
 
@@ -118,7 +118,7 @@
           
         
           
-            <li class="docs-nav__section__list-item"><a href="/docs/site-configuration/" class="docs-nav__section__link">Site Configuration</a></li>
+            <li class="docs-nav__section__list-item"><a href="/docs/site-configuration/" class="docs-nav__section__link is-active">Site Configuration</a></li>
           
         
           
@@ -177,7 +177,7 @@
           
         
           
-            <li class="docs-nav__section__list-item"><a href="/docs/sections/" class="docs-nav__section__link is-active">Sections</a></li>
+            <li class="docs-nav__section__list-item"><a href="/docs/sections/" class="docs-nav__section__link">Sections</a></li>
           
         
           
@@ -259,21 +259,44 @@
   <article class="docs-post" itemscope itemtype="http://schema.org/BlogPosting">
 
     <header class="docs-post__header">
-      <h1 class="docs-post__title" itemprop="name headline">Sections</h1>
+      <h1 class="docs-post__title" itemprop="name headline">Site Configuration</h1>
     </header>
 
     <div class="docs-post__content" itemprop="articleBody">
-      <p>Sections are how Flint categorizes different entries. A section defines what kind of information entries in that section can expect; when creating a section, you decide on which fields you want to show. Each section can use a different template file.</p>
+      <p>There are a number of customization options available to you when you created your instance of the <code class="highlighter-rouge">Flint</code> object. You can pass an object of these options as the first parameter when creating the instance, like:</p>
 
-<p>Sections are the best way to group entries of a similar type. For example, in a food blog you might have a section for general recipes, then a section for your own personal restaurant critiques. The important thing to note is that entries in each of those two sections will have vastly different content, and so they should be designed and handled differently. Of course, this is totally up to you; the point of sections is to give you choices but not lock you into any specific functionality.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kr">const</span> <span class="nx">settings</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">siteName</span><span class="p">:</span> <span class="s1">'My Amazing Flint Site'</span><span class="p">,</span>
+<span class="p">};</span>
 
-<h2 id="creating-a-new-section">Creating a new Section</h2>
+<span class="kr">const</span> <span class="nx">myFlintServer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Flint</span><span class="p">(</span><span class="nx">settings</span><span class="p">);</span>
+</code></pre>
+</div>
 
-<p>Creating a new Section is real easy; just head to your site’s Settings from the side menu, click <em>Sections</em> and then the <em>New Section</em> button in the top right. As you write the title of the section, you’ll see that the handle is created based on the title. That handle is how you’ll find entries in that section within the template. You can learn more about how sections are handled in templates <a href="/">here</a>.</p>
+<h2 id="available-settings">Available Settings</h2>
 
-<h2 id="plans-for-improvement">Plans for Improvement</h2>
+<h3 id="sitename"><code class="highlighter-rouge">siteName</code></h3>
+<p>The name of your site, as shown in the sidebar of the admin dashboard.</p>
 
-<p>Create different types of sections, to be able to have different organizational features for the different types of content. For example, a general section to have different entries of the same level, and then a hierarchy-based section that can have nested entries (could be useful for documentation, wikis, etc.). If you have any inclination to talk about it, please <a href="https://github.com/JasonEtco/flintcms/issues">do so here!</a></p>
+<h3 id="siteurl"><code class="highlighter-rouge">siteUrl</code></h3>
+<p>The URL of your website.</p>
+
+<h3 id="templatepath"><code class="highlighter-rouge">templatePath</code></h3>
+<p>Path to your templates directory, relative to your server’s entry point. Default is <code class="highlighter-rouge">templates</code>.</p>
+
+<h3 id="publicpath"><code class="highlighter-rouge">publicPath</code></h3>
+<p>Path to your public directory, relative to your server’s entry point. Default is <code class="highlighter-rouge">public</code>.</p>
+
+<h3 id="pluginpath"><code class="highlighter-rouge">pluginPath</code></h3>
+<p>Path to your plugins directory, relative to your server’s entry point. Default is <code class="highlighter-rouge">plugins</code>.</p>
+
+<h3 id="scsspath"><code class="highlighter-rouge">scssPath</code></h3>
+<p>Path to your scss directory, relative to your server’s entry point. Default is <code class="highlighter-rouge">scss</code>.</p>
+
+<h3 id="scssentrypoint"><code class="highlighter-rouge">scssEntryPoint</code></h3>
+<p>The name of the file that imports all of your SCSS partials, within the <code class="highlighter-rouge">scssPath</code> directory.</p>
+
+<p>Note that there are separate settings in your <code class="highlighter-rouge">.env</code> file; these are kept separate so that sensitive information can be stored in <code class="highlighter-rouge">.env</code> and not committed to version control, but general site configuration can be.</p>
 
     </div>
 

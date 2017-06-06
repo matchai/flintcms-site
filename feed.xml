@@ -6,9 +6,323 @@
 </description>
     <link>https://flintcms.co/</link>
     <atom:link href="https://flintcms.co/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 05 Jun 2017 03:18:54 -0400</pubDate>
-    <lastBuildDate>Mon, 05 Jun 2017 03:18:54 -0400</lastBuildDate>
+    <pubDate>Tue, 06 Jun 2017 14:14:44 -0400</pubDate>
+    <lastBuildDate>Tue, 06 Jun 2017 14:14:44 -0400</lastBuildDate>
     <generator>Jekyll v3.1.2</generator>
+    
+      <item>
+        <title>Templating Guide</title>
+        <description>&lt;p&gt;Every template has access to the &lt;code class=&quot;highlighter-rouge&quot;&gt;flint&lt;/code&gt; object. This is a big object containing a ton of information, like all of the sections, entries and users your website has. For example, if you wanted to loop through all of the sections and show each one’s title:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;ul&amp;gt;
+  &lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;section&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;in&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;flint.sections&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
+    &amp;lt;li&amp;gt;&lt;span class=&quot;p&quot;&gt;{{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;section&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}}&lt;/span&gt;&amp;lt;/li&amp;gt;
+  &lt;span class=&quot;p&quot;&gt;{%&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;endfor&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;%}&lt;/span&gt;
+&amp;lt;/ul&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;flint-object-properties&quot;&gt;Flint Object Properties&lt;/h2&gt;
+
+&lt;h3 id=&quot;sections&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sections&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;An array of &lt;a href=&quot;/docs/templating/sectionmodel/&quot;&gt;SectionModels&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;entries&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;entries&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;An array of &lt;a href=&quot;/docs/templating/entrymodel/&quot;&gt;EntryModels&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;users&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;users&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;An array of &lt;a href=&quot;/docs/templating/usermodel/&quot;&gt;UserModels&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;fields&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fields&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;An array of &lt;a href=&quot;/docs/templating/fieldmodel/&quot;&gt;FieldModels&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;usergroups&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;usergroups&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;An array of &lt;a href=&quot;/docs/templating/usergroupmodel/&quot;&gt;UserGroupModels&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;assets&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;assets&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;An array of &lt;a href=&quot;/docs/templating/assetmodel/&quot;&gt;AssetModels&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;site&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;site&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;A &lt;a href=&quot;/docs/templating/sitemodel/&quot;&gt;SiteModel&lt;/a&gt; object.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 03 Jun 2017 18:16:01 -0400</pubDate>
+        <link>https://flintcms.co/docs/templating/templating/</link>
+        <guid isPermaLink="true">https://flintcms.co/docs/templating/templating/</guid>
+        
+        
+        <category>docs</category>
+        
+        <category>templating</category>
+        
+      </item>
+    
+      <item>
+        <title>UserModel</title>
+        <description>&lt;h2 id=&quot;user-properties&quot;&gt;User Properties&lt;/h2&gt;
+
+&lt;p&gt;UserModel objects have the following properties:&lt;/p&gt;
+
+&lt;h3 id=&quot;datecreated&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dateCreated&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;A UNIX timestamp of the date the user was created.&lt;/p&gt;
+
+&lt;h3 id=&quot;email&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;email&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The user’s email address.&lt;/p&gt;
+
+&lt;h3 id=&quot;name&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;name&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;An object containing the user’s first and last name.&lt;/p&gt;
+
+&lt;h4 id=&quot;namefirst&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;name.first&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;The user’s first name.&lt;/p&gt;
+
+&lt;h4 id=&quot;namelast&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;name.last&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;The user’s last name.&lt;/p&gt;
+
+&lt;h3 id=&quot;id&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;_id&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The user’s ID.&lt;/p&gt;
+
+&lt;h3 id=&quot;usergroup&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;usergroup&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The user’s usergroup. This is an object based on the &lt;a href=&quot;/docs/templating/usergroupmodel/&quot;&gt;UserGroup model&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;username&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;username&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The user’s username.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 03 Jun 2017 18:16:01 -0400</pubDate>
+        <link>https://flintcms.co/docs/templating/usermodel/</link>
+        <guid isPermaLink="true">https://flintcms.co/docs/templating/usermodel/</guid>
+        
+        
+        <category>docs</category>
+        
+        <category>templating</category>
+        
+      </item>
+    
+      <item>
+        <title>UserGroupModel</title>
+        <description>&lt;h2 id=&quot;user-group-properties&quot;&gt;User Group Properties&lt;/h2&gt;
+
+&lt;h3 id=&quot;title&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;title&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The title of the usergroup.&lt;/p&gt;
+
+&lt;h3 id=&quot;slug&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;slug&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;A slugified version of the title of the usergroup.&lt;/p&gt;
+
+&lt;h3 id=&quot;datecreated&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dateCreated&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;A UNIX timestamp of the date the usergroup was created.&lt;/p&gt;
+
+&lt;h3 id=&quot;permissions&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;permissions&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;An object of booleans that looks like this:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;users&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;canAddUsers&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;entries&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&quot;canAddEntries&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;For a full list of permissions, check out the &lt;a href=&quot;https://github.com/JasonEtco/flintcms/blob/master/server/utils/permissions.json&quot;&gt;main JSON file&lt;/a&gt;. Keep in mind that the actual object in the usergroup model available to templates is a reduced version that looks like the above snippet (simple key/value pairs, not arrays of objects).&lt;/p&gt;
+</description>
+        <pubDate>Sat, 03 Jun 2017 18:16:01 -0400</pubDate>
+        <link>https://flintcms.co/docs/templating/usergroupmodel/</link>
+        <guid isPermaLink="true">https://flintcms.co/docs/templating/usergroupmodel/</guid>
+        
+        
+        <category>docs</category>
+        
+        <category>templating</category>
+        
+      </item>
+    
+      <item>
+        <title>SiteModel</title>
+        <description>&lt;h2 id=&quot;site-properties&quot;&gt;Site Properties&lt;/h2&gt;
+
+&lt;h3 id=&quot;sitename&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;siteName&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The name of your website&lt;/p&gt;
+
+&lt;h3 id=&quot;siteurl&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;siteUrl&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;Your website’s url. Note that this may not be reliable as it checks your configuration settings, not where the server is actually running.&lt;/p&gt;
+
+&lt;h3 id=&quot;style&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;style&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;A string of CSS code that can be changed through the admin dashboard. Useful for small changes to templates that can be made without cloning/editing the codebase.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 03 Jun 2017 18:16:01 -0400</pubDate>
+        <link>https://flintcms.co/docs/templating/sitemodel/</link>
+        <guid isPermaLink="true">https://flintcms.co/docs/templating/sitemodel/</guid>
+        
+        
+        <category>docs</category>
+        
+        <category>templating</category>
+        
+      </item>
+    
+      <item>
+        <title>SectionModel</title>
+        <description>&lt;h2 id=&quot;section-properties&quot;&gt;Section Properties&lt;/h2&gt;
+
+&lt;h3 id=&quot;title&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;title&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The title of the section.&lt;/p&gt;
+
+&lt;h3 id=&quot;slug&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;slug&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;A slugified version of the title of the section.&lt;/p&gt;
+
+&lt;h3 id=&quot;handle&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;handle&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;A camelcase version of the title, useful for referencing the section in a template.&lt;/p&gt;
+
+&lt;h3 id=&quot;datecreated&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dateCreated&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;A UNIX timestamp of the date the usergroup was created.&lt;/p&gt;
+
+&lt;h3 id=&quot;template&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;template&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The template that has been assigned to this section.&lt;/p&gt;
+
+&lt;h3 id=&quot;fields&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fields&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;An array of field IDs that are available to the section. Note that this is the list of fields available, not the list of fields that an entry has filled.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 03 Jun 2017 18:16:01 -0400</pubDate>
+        <link>https://flintcms.co/docs/templating/sectionmodel/</link>
+        <guid isPermaLink="true">https://flintcms.co/docs/templating/sectionmodel/</guid>
+        
+        
+        <category>docs</category>
+        
+        <category>templating</category>
+        
+      </item>
+    
+      <item>
+        <title>FieldModel</title>
+        <description>&lt;h2 id=&quot;field-properties&quot;&gt;Field Properties&lt;/h2&gt;
+
+&lt;h3 id=&quot;title&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;title&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The title of the field.&lt;/p&gt;
+
+&lt;h3 id=&quot;slug&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;slug&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;A slugified version of the title of the field.&lt;/p&gt;
+
+&lt;h3 id=&quot;handle&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;handle&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;A camelcase version of the title, useful for referencing the field in a template.&lt;/p&gt;
+
+&lt;h3 id=&quot;instructions&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;instructions&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The instructions given above the field in the admin dashboard.&lt;/p&gt;
+
+&lt;h3 id=&quot;type&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;type&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The type of field this is. Example: Dropdown, RichText.&lt;/p&gt;
+
+&lt;h3 id=&quot;required&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;required&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;A boolean to represent whether or not the field is required in the admin dashboard.&lt;/p&gt;
+
+&lt;h3 id=&quot;options&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;options&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;An object that contains the various options available to the specific type of field. See FieldTypes for more.&lt;/p&gt;
+
+&lt;h3 id=&quot;datecreated&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dateCreated&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;A UNIX timestamp for when the field was created.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 03 Jun 2017 18:16:01 -0400</pubDate>
+        <link>https://flintcms.co/docs/templating/fieldmodel/</link>
+        <guid isPermaLink="true">https://flintcms.co/docs/templating/fieldmodel/</guid>
+        
+        
+        <category>docs</category>
+        
+        <category>templating</category>
+        
+      </item>
+    
+      <item>
+        <title>EntryModel</title>
+        <description>&lt;h2 id=&quot;entry-properties&quot;&gt;Entry Properties&lt;/h2&gt;
+
+&lt;h3 id=&quot;title&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;title&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The title of the entry.&lt;/p&gt;
+
+&lt;h3 id=&quot;slug&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;slug&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;A slugified version of the title of the entry.&lt;/p&gt;
+
+&lt;h3 id=&quot;url&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;url&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The url to the entry. This is currently &lt;code class=&quot;highlighter-rouge&quot;&gt;:sectionSlug/:entrySlug&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;datecreated&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dateCreated&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;A UNIX timestamp for when the field was created.&lt;/p&gt;
+
+&lt;h3 id=&quot;status&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;status&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The status of the entry, either ‘Live’, ‘Draft’ or ‘Disabled’.&lt;/p&gt;
+
+&lt;h3 id=&quot;author&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;author&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The user who created the entry. This is an instance of the &lt;a href=&quot;/docs/templating/usermodel/&quot;&gt;UserModel&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;datecreated-1&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dateCreated&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;A UNIX timestamp of when the entry was created.&lt;/p&gt;
+
+&lt;h3 id=&quot;fields&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fields&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;An array of objects of the fields in the entry.&lt;/p&gt;
+
+&lt;h4 id=&quot;fieldsfieldid&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fields[].fieldId&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;The _id of the field.&lt;/p&gt;
+
+&lt;h4 id=&quot;fieldshandle&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fields[].handle&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;The field’s handle.&lt;/p&gt;
+
+&lt;h4 id=&quot;fieldsvalue&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;fields[].value&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;The value of the field for this entry.&lt;/p&gt;
+
+&lt;blockquote class=&quot;notif notif--note&quot;&gt;
+  &lt;p&gt;If you know the handle of a field, you can get the value in the entry by using &lt;code class=&quot;highlighter-rouge&quot;&gt;entry.FIELDHANDLE&lt;/code&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+        <pubDate>Sat, 03 Jun 2017 18:16:01 -0400</pubDate>
+        <link>https://flintcms.co/docs/templating/entrymodel/</link>
+        <guid isPermaLink="true">https://flintcms.co/docs/templating/entrymodel/</guid>
+        
+        
+        <category>docs</category>
+        
+        <category>templating</category>
+        
+      </item>
+    
+      <item>
+        <title>AssetModel</title>
+        <description>&lt;h2 id=&quot;asset-properties&quot;&gt;Asset Properties&lt;/h2&gt;
+
+&lt;h3 id=&quot;title&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;title&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The title of the asset.&lt;/p&gt;
+
+&lt;h3 id=&quot;extension&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;extension&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The file extension of the asset.&lt;/p&gt;
+
+&lt;h3 id=&quot;filename&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;filename&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The filename of the asset in the local file system.&lt;/p&gt;
+
+&lt;h3 id=&quot;datecreated&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dateCreated&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;A UNIX timestamp of when the asset was created.&lt;/p&gt;
+
+&lt;h3 id=&quot;width&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;width&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The width, in pixels, of the asset.&lt;/p&gt;
+
+&lt;h3 id=&quot;height&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;height&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The height, in pixels, of the asset.&lt;/p&gt;
+
+&lt;h3 id=&quot;size&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;size&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The file size, in bytes, of the asset.&lt;/p&gt;
+
+&lt;h3 id=&quot;mimetype&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mimetype&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;The mimetype of the asset.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 03 Jun 2017 18:16:01 -0400</pubDate>
+        <link>https://flintcms.co/docs/templating/assetmodel/</link>
+        <guid isPermaLink="true">https://flintcms.co/docs/templating/assetmodel/</guid>
+        
+        
+        <category>docs</category>
+        
+        <category>templating</category>
+        
+      </item>
     
       <item>
         <title>Introduction</title>
@@ -55,7 +369,7 @@
 
 &lt;h2 id=&quot;env&quot;&gt;.env&lt;/h2&gt;
 
-&lt;p&gt;You will also need a separate &lt;code class=&quot;highlighter-rouge&quot;&gt;.env&lt;/code&gt; file to store sensitive environment variables, like database connection details. Here is what it would look like:&lt;/p&gt;
+&lt;p&gt;You will also need a separate &lt;code class=&quot;highlighter-rouge&quot;&gt;.env&lt;/code&gt; file to store sensitive environment variables, like database connection details. &lt;em&gt;When your server starts, it will generate a .env file for you if you don’t already have one.&lt;/em&gt; Here is what it would look like:&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Secret settings
 SESSION_SECRET= ...
@@ -75,106 +389,13 @@ MAIL_PASS= ...
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;For a Mongo database, mLab is suggested but by no means mandatory. As for emails, Flint uses the &lt;a href=&quot;https://nodemailer.com/about/&quot;&gt;Nodemailer&lt;/a&gt; package which supports various SMTP services. Flint’s recommended one is Mailgun, and if you’re having trouble setting it up feel free to &lt;a href=&quot;hello@jasonet.co&quot;&gt;email me&lt;/a&gt; and I can give you Flint-specific Mailgun credentials.&lt;/p&gt;
+&lt;p&gt;For a Mongo database, mLab is suggested but by no means mandatory. As for emails, Flint uses the &lt;a href=&quot;https://nodemailer.com/about/&quot;&gt;Nodemailer&lt;/a&gt; package which supports various SMTP services. Flint’s recommendation is Mailgun, and if you’re having trouble setting it up feel free to &lt;a href=&quot;hello@jasonet.co&quot;&gt;email me&lt;/a&gt; and I can give you Flint-specific Mailgun credentials.&lt;/p&gt;
 
-&lt;p&gt;If you’re having trouble setting up any of these, feel free to &lt;a href=&quot;https://github.com/JasonEtco/flintcms/issues&quot;&gt;open up an issue&lt;/a&gt; detailing your experience.&lt;/p&gt;
+&lt;p&gt;If you’re having trouble with any of these steps, please &lt;a href=&quot;https://github.com/JasonEtco/flintcms/issues&quot;&gt;open up an issue&lt;/a&gt; detailing your experience.&lt;/p&gt;
 </description>
         <pubDate>Sat, 03 Jun 2017 18:16:01 -0400</pubDate>
         <link>https://flintcms.co/docs/installation/</link>
         <guid isPermaLink="true">https://flintcms.co/docs/installation/</guid>
-        
-        
-        <category>docs</category>
-        
-      </item>
-    
-      <item>
-        <title>Users</title>
-        <description>&lt;p&gt;Unlike other content managment systems, Flint comes with unlimited usergroups for free. This means that as far as templating goes, there is only one type of user with potentially different usergroups (which makes templating easy to plan for).&lt;/p&gt;
-
-&lt;p&gt;Every time the server is restarted, Flint checks to see if there is an Admin usergroup and, if necessary, creates one with all permission enabled. Deleting the Admin usergroup is disabled in the dashboard, but in case someone does it by mistake directly through the database or some other horrible mistake happens, Flint has you covered.&lt;/p&gt;
-
-&lt;h2 id=&quot;public-registration&quot;&gt;Public Registration&lt;/h2&gt;
-
-&lt;p&gt;Some websites need for their users to be able to signup for the site, rather than being given an account. In your Flint site’s settings (under &lt;code class=&quot;highlighter-rouge&quot;&gt;Settings/Site Settings&lt;/code&gt;) you can enable or disable the endpoints that allow for form or AJAX inputs.&lt;/p&gt;
-</description>
-        <pubDate>Sat, 03 Jun 2017 18:16:01 -0400</pubDate>
-        <link>https://flintcms.co/docs/users/</link>
-        <guid isPermaLink="true">https://flintcms.co/docs/users/</guid>
-        
-        
-        <category>docs</category>
-        
-      </item>
-    
-      <item>
-        <title>Sections</title>
-        <description>&lt;p&gt;Sections are how Flint categorizes different entries. A section defines what kind of information entries in that section can expect; when creating a section, you decide on which fields you want to show. Each section can use a different template file.&lt;/p&gt;
-
-&lt;p&gt;Sections are the best way to group entries of a similar type. For example, in a food blog you might have a section for general recipes, then a section for your own personal restaurant critiques. The important thing to note is that entries in each of those two sections will have vastly different content, and so they should be designed and handled differently. Of course, this is totally up to you; the point of sections is to give you choices but not lock you into any specific functionality.&lt;/p&gt;
-
-&lt;h2 id=&quot;creating-a-new-section&quot;&gt;Creating a new Section&lt;/h2&gt;
-
-&lt;p&gt;Creating a new Section is real easy; just head to your site’s Settings from the side menu, click &lt;em&gt;Sections&lt;/em&gt; and then the &lt;em&gt;New Section&lt;/em&gt; button in the top right. As you write the title of the section, you’ll see that the handle is created based on the title. That handle is how you’ll find entries in that section within the template. You can learn more about how sections are handled in templates &lt;a href=&quot;/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&quot;plans-for-improvement&quot;&gt;Plans for Improvement&lt;/h2&gt;
-
-&lt;p&gt;Create different types of sections, to be able to have different organizational features for the different types of content. For example, a general section to have different entries of the same level, and then a hierarchy-based section that can have nested entries (could be useful for documentation, wikis, etc.). If you have any inclination to talk about it, please &lt;a href=&quot;https://github.com/JasonEtco/flintcms/issues&quot;&gt;do so here!&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 03 Jun 2017 18:16:01 -0400</pubDate>
-        <link>https://flintcms.co/docs/sections/</link>
-        <guid isPermaLink="true">https://flintcms.co/docs/sections/</guid>
-        
-        
-        <category>docs</category>
-        
-      </item>
-    
-      <item>
-        <title>Fields</title>
-        <description>&lt;p&gt;Fields are the ways that your writers or content editors can fill in the spaces given to them in a section. For example, you might have a field that is a simple text input called &lt;em&gt;Subtitle&lt;/em&gt;, then just below it you could have a Rich Text field called &lt;em&gt;Main Content&lt;/em&gt;. This is a common pattern to represent two individual bits of content that, due to their individual template handles, can be styled and layed out completely separately.&lt;/p&gt;
-
-&lt;p&gt;Fields can be reused throughout multiple sections and each come with customizable options to ensure that your content is consistent.&lt;/p&gt;
-</description>
-        <pubDate>Sat, 03 Jun 2017 18:16:01 -0400</pubDate>
-        <link>https://flintcms.co/docs/fields/</link>
-        <guid isPermaLink="true">https://flintcms.co/docs/fields/</guid>
-        
-        
-        <category>docs</category>
-        
-      </item>
-    
-      <item>
-        <title>Entries</title>
-        <description>&lt;p&gt;Entries are really the meat and potatoes of Flint. You can think of them as posts or articles, but they are effectively the individual documents that your website has. Entries are grouped within Sections to maintain the same styling and content expectations.&lt;/p&gt;
-
-&lt;p&gt;Entries can have one of three statuses: &lt;code class=&quot;highlighter-rouge&quot;&gt;Live&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;Draft&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;Disabled&lt;/code&gt;. Live is fairly straightforward, but Draft and Disabled are separate to enable more specific user permissions.&lt;/p&gt;
-
-&lt;p&gt;Because entries are the main way that content is added to your site, there are specific permissions that deal with them. For example, there is a permission that enables/disables the ability to create or edit a live entry.&lt;/p&gt;
-</description>
-        <pubDate>Sat, 03 Jun 2017 18:16:01 -0400</pubDate>
-        <link>https://flintcms.co/docs/entries/</link>
-        <guid isPermaLink="true">https://flintcms.co/docs/entries/</guid>
-        
-        
-        <category>docs</category>
-        
-      </item>
-    
-      <item>
-        <title>Assets</title>
-        <description>&lt;p&gt;Assets are, for now, images. These images are stored in the local file system on the server. When you upload a new asset, it is saved to the &lt;code class=&quot;highlighter-rouge&quot;&gt;/public/assets/&lt;/code&gt; folder of your server. There is a special static route to the public folder as a part of the Flint server, so when linking to an asset in a template you’ll want to do something like:&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;img&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/public/assets/myimage.png&quot;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;Future plans to improve assets includes adding more available file types and categorization (like sub-folders). If you want to help improve FlintCMS in this way, please &lt;a href=&quot;https://github.com/JasonEtco/flintcms/issues&quot;&gt;talk about it here&lt;/a&gt;!&lt;/p&gt;
-</description>
-        <pubDate>Sat, 03 Jun 2017 18:16:01 -0400</pubDate>
-        <link>https://flintcms.co/docs/assets/</link>
-        <guid isPermaLink="true">https://flintcms.co/docs/assets/</guid>
         
         
         <category>docs</category>

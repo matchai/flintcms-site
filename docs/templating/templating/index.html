@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Sections | FlintCMS</title>
-  <meta name="description" content="Sections are how Flint categorizes different entries. A section defines what kind of information entries in that section can expect; when creating a section,...">
+  <title>Templating Guide | FlintCMS</title>
+  <meta name="description" content="Every template has access to the flint object. This is a big object containing a ton of information, like all of the sections, entries and users your website...">
 
   <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono:400,700" rel="stylesheet">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://flintcms.co/docs/sections/">
+  <link rel="canonical" href="https://flintcms.co/docs/templating/templating/">
   <link rel="alternate" type="application/rss+xml" title="FlintCMS" href="https://flintcms.co/feed.xml">
 
   <link rel="manifest" href="/manifest.json">
@@ -23,12 +23,12 @@
   <meta name="msapplication-config" content="">
   <meta name="theme-color" content="#fe6300">
 
-  <meta property="og:title" content="Sections | FlintCMS" />
-  <meta property="og:description" content="Sections are how Flint categorizes different entries. A section defines what kind of information entries in that section can expect; when creating a section,...">
+  <meta property="og:title" content="Templating Guide | FlintCMS" />
+  <meta property="og:description" content="Every template has access to the flint object. This is a big object containing a ton of information, like all of the sections, entries and users your website...">
   <meta property="og:type" content="article" />
   <meta property="og:article:modified_time" content="2017-06-06 14:14:44 -0400" />
-  <meta property="og:article:section" content="Core Concepts" />
-  <meta property="og:url" content="https://flintcms.co/docs/sections/" />
+  <meta property="og:article:section" content="Templating Reference" />
+  <meta property="og:url" content="https://flintcms.co/docs/templating/templating/" />
   <meta property="og:image" content="https://flintcms.co/assets/flintcms.png" />
   <meta property="og:image:url" content="https://flintcms.co/assets/flintcms.png" />
   <meta property="og:image:width" content="1200" />
@@ -37,10 +37,10 @@
   <meta property="og:image:alt" content="FlintCMS, a content-focused management system." />
 
   <meta property="twitter:card" content="summary" />
-  <meta property="twitter:title" content="Sections | FlintCMS" />
+  <meta property="twitter:title" content="Templating Guide | FlintCMS" />
   <meta property="twitter:image" content="https://flintcms.co/assets/flintcms.png" />
   <meta property="twitter:creator" content="@jasonetco" />
-  <meta property="twitter:description" content="Sections are how Flint categorizes different entries. A section defines what kind of information entries in that section can expect; when creating a section,...">
+  <meta property="twitter:description" content="Every template has access to the flint object. This is a big object containing a ton of information, like all of the sections, entries and users your website...">
   <meta property="twitter:image:alt" content="FlintCMS, a content-focused management system." />
 </head>
 
@@ -177,7 +177,7 @@
           
         
           
-            <li class="docs-nav__section__list-item"><a href="/docs/sections/" class="docs-nav__section__link is-active">Sections</a></li>
+            <li class="docs-nav__section__list-item"><a href="/docs/sections/" class="docs-nav__section__link">Sections</a></li>
           
         
           
@@ -200,7 +200,7 @@
       <ul class="docs-nav__section__list">
         
           
-            <li class="docs-nav__section__list-item"><a href="/docs/templating/templating/" class="docs-nav__section__link">Templating Guide</a></li>
+            <li class="docs-nav__section__list-item"><a href="/docs/templating/templating/" class="docs-nav__section__link is-active">Templating Guide</a></li>
           
         
           
@@ -259,21 +259,42 @@
   <article class="docs-post" itemscope itemtype="http://schema.org/BlogPosting">
 
     <header class="docs-post__header">
-      <h1 class="docs-post__title" itemprop="name headline">Sections</h1>
+      <h1 class="docs-post__title" itemprop="name headline">Templating Guide</h1>
     </header>
 
     <div class="docs-post__content" itemprop="articleBody">
-      <p>Sections are how Flint categorizes different entries. A section defines what kind of information entries in that section can expect; when creating a section, you decide on which fields you want to show. Each section can use a different template file.</p>
+      <p>Every template has access to the <code class="highlighter-rouge">flint</code> object. This is a big object containing a ton of information, like all of the sections, entries and users your website has. For example, if you wanted to loop through all of the sections and show each one’s title:</p>
 
-<p>Sections are the best way to group entries of a similar type. For example, in a food blog you might have a section for general recipes, then a section for your own personal restaurant critiques. The important thing to note is that entries in each of those two sections will have vastly different content, and so they should be designed and handled differently. Of course, this is totally up to you; the point of sections is to give you choices but not lock you into any specific functionality.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;ul&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span>section<span class="w"> </span>in<span class="w"> </span>flint.sections<span class="w"> </span><span class="p">%}</span>
+    &lt;li&gt;<span class="p">{{</span><span class="w"> </span><span class="nv">section</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="p">}}</span>&lt;/li&gt;
+  <span class="p">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="p">%}</span>
+&lt;/ul&gt;
+</code></pre>
+</div>
 
-<h2 id="creating-a-new-section">Creating a new Section</h2>
+<h2 id="flint-object-properties">Flint Object Properties</h2>
 
-<p>Creating a new Section is real easy; just head to your site’s Settings from the side menu, click <em>Sections</em> and then the <em>New Section</em> button in the top right. As you write the title of the section, you’ll see that the handle is created based on the title. That handle is how you’ll find entries in that section within the template. You can learn more about how sections are handled in templates <a href="/">here</a>.</p>
+<h3 id="sections"><code class="highlighter-rouge">sections</code></h3>
+<p>An array of <a href="/docs/templating/sectionmodel/">SectionModels</a>.</p>
 
-<h2 id="plans-for-improvement">Plans for Improvement</h2>
+<h3 id="entries"><code class="highlighter-rouge">entries</code></h3>
+<p>An array of <a href="/docs/templating/entrymodel/">EntryModels</a>.</p>
 
-<p>Create different types of sections, to be able to have different organizational features for the different types of content. For example, a general section to have different entries of the same level, and then a hierarchy-based section that can have nested entries (could be useful for documentation, wikis, etc.). If you have any inclination to talk about it, please <a href="https://github.com/JasonEtco/flintcms/issues">do so here!</a></p>
+<h3 id="users"><code class="highlighter-rouge">users</code></h3>
+<p>An array of <a href="/docs/templating/usermodel/">UserModels</a>.</p>
+
+<h3 id="fields"><code class="highlighter-rouge">fields</code></h3>
+<p>An array of <a href="/docs/templating/fieldmodel/">FieldModels</a>.</p>
+
+<h3 id="usergroups"><code class="highlighter-rouge">usergroups</code></h3>
+<p>An array of <a href="/docs/templating/usergroupmodel/">UserGroupModels</a>.</p>
+
+<h3 id="assets"><code class="highlighter-rouge">assets</code></h3>
+<p>An array of <a href="/docs/templating/assetmodel/">AssetModels</a>.</p>
+
+<h3 id="site"><code class="highlighter-rouge">site</code></h3>
+<p>A <a href="/docs/templating/sitemodel/">SiteModel</a> object.</p>
 
     </div>
 

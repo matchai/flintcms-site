@@ -9,7 +9,7 @@
   <title>Installation | FlintCMS</title>
   <meta name="description" content="Installing and getting up and running with Flint couldn’t be any easier. Assuming you have Node.js installed, you’ll want to run:">
 
-  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono:400,700" rel="stylesheet">
   <link rel="stylesheet" href="/css/main.css">
   <link rel="canonical" href="https://flintcms.co/docs/installation/">
   <link rel="alternate" type="application/rss+xml" title="FlintCMS" href="https://flintcms.co/feed.xml">
@@ -26,7 +26,7 @@
   <meta property="og:title" content="Installation | FlintCMS" />
   <meta property="og:description" content="Installing and getting up and running with Flint couldn’t be any easier. Assuming you have Node.js installed, you’ll want to run:">
   <meta property="og:type" content="article" />
-  <meta property="og:article:modified_time" content="2017-06-05 03:18:54 -0400" />
+  <meta property="og:article:modified_time" content="2017-06-06 14:14:44 -0400" />
   <meta property="og:article:section" content="Getting Started" />
   <meta property="og:url" content="https://flintcms.co/docs/installation/" />
   <meta property="og:image" content="https://flintcms.co/assets/flintcms.png" />
@@ -94,11 +94,39 @@
       <ul class="docs-nav__section__list">
         
           
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
             <li class="docs-nav__section__list-item"><a href="/docs/introduction/" class="docs-nav__section__link">Introduction</a></li>
           
         
           
             <li class="docs-nav__section__list-item"><a href="/docs/installation/" class="docs-nav__section__link is-active">Installation</a></li>
+          
+        
+          
+            <li class="docs-nav__section__list-item"><a href="/docs/site-configuration/" class="docs-nav__section__link">Site Configuration</a></li>
+          
+        
+          
+            <li class="docs-nav__section__list-item"><a href="/docs/setting-up-directory/" class="docs-nav__section__link">Setting up the Directory</a></li>
+          
+        
+          
+            <li class="docs-nav__section__list-item"><a href="/docs/requirements/" class="docs-nav__section__link">System Requirements</a></li>
           
         
           
@@ -123,6 +151,28 @@
           
         
           
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
             <li class="docs-nav__section__list-item"><a href="/docs/users/" class="docs-nav__section__link">Users</a></li>
           
         
@@ -140,6 +190,65 @@
         
           
             <li class="docs-nav__section__list-item"><a href="/docs/assets/" class="docs-nav__section__link">Assets</a></li>
+          
+        
+      </ul>
+    </section>
+  
+    <section class="docs-nav__section">
+      <h6 class="docs-nav__section__title">Templating Reference</h6>
+      <ul class="docs-nav__section__list">
+        
+          
+            <li class="docs-nav__section__list-item"><a href="/docs/templating/templating/" class="docs-nav__section__link">Templating Guide</a></li>
+          
+        
+          
+            <li class="docs-nav__section__list-item"><a href="/docs/templating/usermodel/" class="docs-nav__section__link">UserModel</a></li>
+          
+        
+          
+            <li class="docs-nav__section__list-item"><a href="/docs/templating/usergroupmodel/" class="docs-nav__section__link">UserGroupModel</a></li>
+          
+        
+          
+            <li class="docs-nav__section__list-item"><a href="/docs/templating/sitemodel/" class="docs-nav__section__link">SiteModel</a></li>
+          
+        
+          
+            <li class="docs-nav__section__list-item"><a href="/docs/templating/sectionmodel/" class="docs-nav__section__link">SectionModel</a></li>
+          
+        
+          
+            <li class="docs-nav__section__list-item"><a href="/docs/templating/fieldmodel/" class="docs-nav__section__link">FieldModel</a></li>
+          
+        
+          
+            <li class="docs-nav__section__list-item"><a href="/docs/templating/entrymodel/" class="docs-nav__section__link">EntryModel</a></li>
+          
+        
+          
+            <li class="docs-nav__section__list-item"><a href="/docs/templating/assetmodel/" class="docs-nav__section__link">AssetModel</a></li>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
           
         
       </ul>
@@ -178,7 +287,7 @@
 
 <h2 id="env">.env</h2>
 
-<p>You will also need a separate <code class="highlighter-rouge">.env</code> file to store sensitive environment variables, like database connection details. Here is what it would look like:</p>
+<p>You will also need a separate <code class="highlighter-rouge">.env</code> file to store sensitive environment variables, like database connection details. <em>When your server starts, it will generate a .env file for you if you don’t already have one.</em> Here is what it would look like:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code># Secret settings
 SESSION_SECRET= ...
@@ -198,9 +307,9 @@ MAIL_PASS= ...
 </code></pre>
 </div>
 
-<p>For a Mongo database, mLab is suggested but by no means mandatory. As for emails, Flint uses the <a href="https://nodemailer.com/about/">Nodemailer</a> package which supports various SMTP services. Flint’s recommended one is Mailgun, and if you’re having trouble setting it up feel free to <a href="hello@jasonet.co">email me</a> and I can give you Flint-specific Mailgun credentials.</p>
+<p>For a Mongo database, mLab is suggested but by no means mandatory. As for emails, Flint uses the <a href="https://nodemailer.com/about/">Nodemailer</a> package which supports various SMTP services. Flint’s recommendation is Mailgun, and if you’re having trouble setting it up feel free to <a href="hello@jasonet.co">email me</a> and I can give you Flint-specific Mailgun credentials.</p>
 
-<p>If you’re having trouble setting up any of these, feel free to <a href="https://github.com/JasonEtco/flintcms/issues">open up an issue</a> detailing your experience.</p>
+<p>If you’re having trouble with any of these steps, please <a href="https://github.com/JasonEtco/flintcms/issues">open up an issue</a> detailing your experience.</p>
 
     </div>
 

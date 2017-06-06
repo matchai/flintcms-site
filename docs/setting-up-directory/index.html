@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Sections | FlintCMS</title>
-  <meta name="description" content="Sections are how Flint categorizes different entries. A section defines what kind of information entries in that section can expect; when creating a section,...">
+  <title>Setting up the Directory | FlintCMS</title>
+  <meta name="description" content="Now that Flint is installed and ready to go, you’ll want to design and build your templates. Flint works within four main directories:">
 
   <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono:400,700" rel="stylesheet">
   <link rel="stylesheet" href="/css/main.css">
-  <link rel="canonical" href="https://flintcms.co/docs/sections/">
+  <link rel="canonical" href="https://flintcms.co/docs/setting-up-directory/">
   <link rel="alternate" type="application/rss+xml" title="FlintCMS" href="https://flintcms.co/feed.xml">
 
   <link rel="manifest" href="/manifest.json">
@@ -23,12 +23,12 @@
   <meta name="msapplication-config" content="">
   <meta name="theme-color" content="#fe6300">
 
-  <meta property="og:title" content="Sections | FlintCMS" />
-  <meta property="og:description" content="Sections are how Flint categorizes different entries. A section defines what kind of information entries in that section can expect; when creating a section,...">
+  <meta property="og:title" content="Setting up the Directory | FlintCMS" />
+  <meta property="og:description" content="Now that Flint is installed and ready to go, you’ll want to design and build your templates. Flint works within four main directories:">
   <meta property="og:type" content="article" />
   <meta property="og:article:modified_time" content="2017-06-06 14:14:44 -0400" />
-  <meta property="og:article:section" content="Core Concepts" />
-  <meta property="og:url" content="https://flintcms.co/docs/sections/" />
+  <meta property="og:article:section" content="Getting Started" />
+  <meta property="og:url" content="https://flintcms.co/docs/setting-up-directory/" />
   <meta property="og:image" content="https://flintcms.co/assets/flintcms.png" />
   <meta property="og:image:url" content="https://flintcms.co/assets/flintcms.png" />
   <meta property="og:image:width" content="1200" />
@@ -37,10 +37,10 @@
   <meta property="og:image:alt" content="FlintCMS, a content-focused management system." />
 
   <meta property="twitter:card" content="summary" />
-  <meta property="twitter:title" content="Sections | FlintCMS" />
+  <meta property="twitter:title" content="Setting up the Directory | FlintCMS" />
   <meta property="twitter:image" content="https://flintcms.co/assets/flintcms.png" />
   <meta property="twitter:creator" content="@jasonetco" />
-  <meta property="twitter:description" content="Sections are how Flint categorizes different entries. A section defines what kind of information entries in that section can expect; when creating a section,...">
+  <meta property="twitter:description" content="Now that Flint is installed and ready to go, you’ll want to design and build your templates. Flint works within four main directories:">
   <meta property="twitter:image:alt" content="FlintCMS, a content-focused management system." />
 </head>
 
@@ -122,7 +122,7 @@
           
         
           
-            <li class="docs-nav__section__list-item"><a href="/docs/setting-up-directory/" class="docs-nav__section__link">Setting up the Directory</a></li>
+            <li class="docs-nav__section__list-item"><a href="/docs/setting-up-directory/" class="docs-nav__section__link is-active">Setting up the Directory</a></li>
           
         
           
@@ -177,7 +177,7 @@
           
         
           
-            <li class="docs-nav__section__list-item"><a href="/docs/sections/" class="docs-nav__section__link is-active">Sections</a></li>
+            <li class="docs-nav__section__list-item"><a href="/docs/sections/" class="docs-nav__section__link">Sections</a></li>
           
         
           
@@ -259,21 +259,39 @@
   <article class="docs-post" itemscope itemtype="http://schema.org/BlogPosting">
 
     <header class="docs-post__header">
-      <h1 class="docs-post__title" itemprop="name headline">Sections</h1>
+      <h1 class="docs-post__title" itemprop="name headline">Setting up the Directory</h1>
     </header>
 
     <div class="docs-post__content" itemprop="articleBody">
-      <p>Sections are how Flint categorizes different entries. A section defines what kind of information entries in that section can expect; when creating a section, you decide on which fields you want to show. Each section can use a different template file.</p>
+      <p>Now that Flint is installed and ready to go, you’ll want to design and build your templates. Flint works within four main directories:</p>
 
-<p>Sections are the best way to group entries of a similar type. For example, in a food blog you might have a section for general recipes, then a section for your own personal restaurant critiques. The important thing to note is that entries in each of those two sections will have vastly different content, and so they should be designed and handled differently. Of course, this is totally up to you; the point of sections is to give you choices but not lock you into any specific functionality.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>|_ templates
+|_ scss
+|_ plugins
+|_ public
+</code></pre>
+</div>
 
-<h2 id="creating-a-new-section">Creating a new Section</h2>
+<p>The actual paths for these directories can be configured in Flint’s main configuration object, but the defaults are above. So, a typical folder structure would look like:</p>
 
-<p>Creating a new Section is real easy; just head to your site’s Settings from the side menu, click <em>Sections</em> and then the <em>New Section</em> button in the top right. As you write the title of the section, you’ll see that the handle is created based on the title. That handle is how you’ll find entries in that section within the template. You can learn more about how sections are handled in templates <a href="/">here</a>.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>|_ templates
+|_ scss
+|_ plugins
+|_ public
+  |_assets
+|_ node_modules
+|_ index.js
+|_ .env
+</code></pre>
+</div>
 
-<h2 id="plans-for-improvement">Plans for Improvement</h2>
+<h2 id="writing-your-first-template">Writing your first Template</h2>
 
-<p>Create different types of sections, to be able to have different organizational features for the different types of content. For example, a general section to have different entries of the same level, and then a hierarchy-based section that can have nested entries (could be useful for documentation, wikis, etc.). If you have any inclination to talk about it, please <a href="https://github.com/JasonEtco/flintcms/issues">do so here!</a></p>
+<p>The first template you’ll want to make is probably an <code class="highlighter-rouge">index</code> file, to represent your site’s homepage. To see a fully fledged example of a series of templates, check out our <a href="https://github.com/flintcms">demo project</a>. Keep in mind that every section needs a template and you can reuse the same template for multiple sections.</p>
+
+<blockquote class="notif notif--note">
+  <p>Note: Putting the <code class="highlighter-rouge">DEBUG=true</code> variable in your <code class="highlighter-rouge">.env</code> file will print all of the data available to your templates into the browser’s console.</p>
+</blockquote>
 
     </div>
 
